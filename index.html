@@ -256,6 +256,15 @@ html.md-lock{overflow:hidden}
  .how>:not(.hp){position:relative;z-index:1}
 }
 
+/* раунд 8.2 (скриншоти Данила з телефона 25.11): текст героя не під кнопкою, назви колонок не обрізані */
+@media (max-width:720px){
+ .hero{height:auto;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end}
+ .hero .l{position:relative;padding-top:140px;padding-bottom:calc(112px + env(safe-area-inset-bottom,0px))}
+ .cl,.cl.open{height:auto;display:flex;flex-direction:column;justify-content:flex-end}
+ .cl{min-height:150px}.cl.open{min-height:460px}
+ .cl .tx{position:relative;left:auto;right:auto;bottom:auto;padding:48px 20px 20px}
+}
+
 /* мобільна: лінія лівим полем (x=30), текст її не перетинає */
 @media (max-width:720px){
  .how li .node{left:-18px}
