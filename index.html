@@ -265,6 +265,14 @@ html.md-lock{overflow:hidden}
  .cl .tx{position:relative;left:auto;right:auto;bottom:auto;padding:48px 20px 20px}
 }
 
+/* раунд 8.3 (Данило 25.11, телефон): цифра переваги більша й з підписом поруч, як на десктопі */
+@media (max-width:720px){
+ .fx .num{height:max(30vh,46vw)}
+ .fx .n{justify-content:flex-start;gap:14px}
+ .fx .n b{font-size:clamp(150px,44vw,300px);white-space:nowrap}
+ .fx .n small{display:block;font-size:16px;max-width:96px;margin-bottom:5vw}
+}
+
 /* мобільна: лінія лівим полем (x=30), текст її не перетинає */
 @media (max-width:720px){
  .how li .node{left:-18px}
