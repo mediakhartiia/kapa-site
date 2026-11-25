@@ -116,6 +116,7 @@ form.is-sent .done{display:block}
 .mo .rv{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform 1.1s var(--ease)}
 .mo .rv.is-in{opacity:1;transform:none}
 .mo .rv-d1{transition-delay:.08s}.mo .rv-d2{transition-delay:.16s}.mo .rv-d3{transition-delay:.24s}
+.ln{display:block}
 .mo .ln{overflow:hidden;display:block}
 .mo .ln>span{display:block;transform:translateY(105%);transition:transform 1.1s var(--ease)}
 .mo .is-in .ln>span,.mo .ln.is-in>span{transform:none}
