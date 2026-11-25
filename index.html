@@ -350,20 +350,23 @@ html.md-lock{overflow:hidden}
   }else{
    var hr=how.getBoundingClientRect(),m=main.getBoundingClientRect(),hT=hw.getBoundingClientRect().top-m.top,howH=hr.height,ox=hr.left-m.left;
    var n0=how.querySelector('[data-node=st0]').getBoundingClientRect(),hy=n0.top-hr.top;
-   var P=Math.round(Math.max(520,vh*.8));
-   hw.style.height=(howH+P)+'px';how.style.top=Math.round(c-hy)+'px';
-   var e=pos(main.querySelector('[data-node=end]')),wb=hT+howH+P,y0=top+hT+hy-c;
+   var P=Math.round(Math.max(520,vh*.8)),ol=how.querySelector('ol').getBoundingClientRect(),below=ol.bottom-n0.top;
+   // рядок кроків на висоті ch: щоб увесь блок кроків влазив в екран (Данило 25.11), кубик плавно підіймається з 60 % і потім повертається
+   var ch=Math.max(vh*.3,Math.min(c,vh-below-40)),Z=vh*.5,ss=function(u){u=Math.max(0,Math.min(1,u));return u*u*(3-2*u)};
+   hw.style.height=(howH+P)+'px';how.style.top=Math.round(ch-hy)+'px';
+   var e=pos(main.querySelector('[data-node=end]')),wb=hT+howH+P,y0=top+hT+hy-ch;
+   var fin=function(y){return c+(ch-c)*ss((y-(hT+hy-Z))/Z)},fout=function(y){return ch+(c-ch)*ss((y-wb)/Z)};
    var dA=rpath([[s.x,s.y],[s.x,hT+P]],r),dC=rpath([[R,wb],[R,e.y],[e.x,e.y]],r);
    bg.setAttribute('d',dA+' M'+R+' '+(hT+howH)+' L'+R+' '+wb+' '+dC);fA.setAttribute('d',dA);fC.setAttribute('d',dC);
    var dB=rpath([[s.x-ox,0],[s.x-ox,hy],[R-ox,hy],[R-ox,howH]],r);bB.setAttribute('d',dB);fB.setAttribute('d',dB);
    size(svg,W,main.scrollHeight);size(hs,W,howH);
    LA=fA.getTotalLength();la=hT-s.y;Lb=fB.getTotalLength();Lc=fC.getTotalLength();
-   samp(fA,LA,0,la).forEach(function(a){push(a[0],top+a[2]-c,0,a[1],a[2],true)});
+   samp(fA,LA,0,la).forEach(function(a){push(a[0],top+a[2]-fin(a[2]),0,a[1],a[2],true)});
    var l1=hy-r,l2=Lb-(howH-hy-r);
    samp(fB,Lb,0,Lb).forEach(function(a){var lb=a[0],sc;
-    if(lb<=l1)sc=top+hT+a[2]-c;else if(lb<l2)sc=(y0-r)+(lb-l1)/(l2-l1)*(P+2*r);else sc=y0+P+(a[2]-hy);
+    var s1=top+hT+hy-r-fin(hT+hy-r);if(lb<=l1)sc=top+hT+a[2]-fin(hT+a[2]);else if(lb<l2)sc=s1+(lb-l1)/(l2-l1)*(y0+P+r-s1);else sc=y0+P+(a[2]-hy);
     push(la+lb,sc,1,a[1],a[2],true)});
-   var pc=null;samp(fC,Lc,0,Lc).forEach(function(a){var v=!pc||Math.abs(a[2]-pc[2])>Math.abs(a[1]-pc[1])*4;pc=a;push(la+Lb+a[0],top+a[2]-c,2,a[1],a[2],v)});
+   var pc=null;samp(fC,Lc,0,Lc).forEach(function(a){var v=!pc||Math.abs(a[2]-pc[2])>Math.abs(a[1]-pc[1])*4;pc=a;push(la+Lb+a[0],top+a[2]-fout(a[2]),2,a[1],a[2],v)});
   }
   for(var i=1;i<keys.length;i++)if(keys[i][0]<=keys[i-1][0])keys[i][0]=keys[i-1][0]+.001;
   hits=nodes.map(function(el){var inB=!mob&&how.contains(el),p=pos(el,inB?hs:main),best=0,bd=1e9;
