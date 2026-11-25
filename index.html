@@ -1,0 +1,308 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Служба в тилу — навчальний батальйон КАПА</title>
+<meta name="description" content="Служиш на бойовій посаді та розглядаєш переведення у тил? Передай досвід рекрутам у навчальному батальйоні КАПА. Заявка або контакт-центр 3333.">
+<meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#0D0D0C">
+<meta property="og:type" content="website"><meta property="og:locale" content="uk_UA"><meta property="og:title" content="Служба в тилу — навчальний батальйон КАПА">
+<meta property="og:description" content="Служиш на бойовій посаді та розглядаєш переведення у тил? Передай досвід рекрутам у навчальному батальйоні КАПА. Заявка або контакт-центр 3333."><meta property="og:image" content="a/og.jpg">
+<link rel="icon" href="a/favicon.svg" type="image/svg+xml"><link rel="icon" href="a/favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="a/apple-touch-icon.png">
+<link rel="preload" href="a/khartia-cond-medium.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="a/hero-wide.jpg" as="image">
+<link rel="stylesheet" href="base.css"><style>:root{--rail:96px}
+main{position:relative}
+.path{position:absolute;left:0;top:0;pointer-events:none;z-index:5;overflow:visible}
+.path .bgp{stroke:#383832;stroke-width:1.5;fill:none}
+.path .fg{stroke:var(--kapa);stroke-width:3;fill:none;stroke-linecap:square}
+.tip{position:absolute;left:0;top:0;z-index:6;width:18px;height:18px;margin:-9px 0 0 -9px;background:var(--kapa);pointer-events:none;box-shadow:0 0 0 6px rgba(105,135,167,.18)}
+.node{position:relative}
+.node .sq{position:absolute;width:16px;height:16px;margin:-8px 0 0 -8px;background:var(--ink);box-shadow:inset 0 0 0 2px var(--kapa);z-index:7;transition:background .4s}
+.on-l .node .sq{background:var(--paper)}
+.node.is-hit .sq{background:var(--kapa)}
+.pad{padding-left:calc(var(--rail) + 64px);padding-right:var(--g)}
+.how{padding-top:150px;padding-bottom:170px}
+.how .top{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:40px;align-items:end;margin-bottom:120px}
+.how h2{font-size:clamp(76px,7.6vw,124px)}
+.how h2 span{color:#9E9E9E}
+.how .top p{margin:0;color:#C9C9C4;font-size:18px}
+.how ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;margin-right:calc(var(--rail) - var(--g) + 40px)}
+.how li{position:relative;padding-top:56px}
+.how li .node{position:absolute;left:0;top:0}
+.how li .no{font-family:"Khartia";font-size:96px;line-height:.85;color:#2E2E2B;transition:color .6s}
+.how li.is-hit .no{color:var(--paper)}
+.how li h3{font-size:40px;margin:22px 0 14px}
+.how li p{margin:0;color:#BDBDB8;font-size:16px;max-width:30ch}
+.how li .act{margin-top:24px}
+.how .foot{margin-top:80px;display:flex;gap:16px;align-items:center;color:var(--mute);font-family:"Inter Tight";font-size:15px}
+/* кроки до шляху — читабельні */
+.how li .no{color:#55554F}
+/* 1 герой: фон — фото, потім відео */
+.hero{position:relative;height:100vh;min-height:760px;overflow:hidden}
+.hero .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%}
+.mo .hero .bg{animation:heroIn 2.4s var(--ease) both}
+@keyframes heroIn{from{transform:scale(1.08);filter:brightness(.4)}to{transform:none;filter:none}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,13,12,.88) 0%,rgba(13,13,12,.4) 55%,rgba(13,13,12,.15) 100%),linear-gradient(0deg,rgba(13,13,12,.95) 0%,rgba(13,13,12,.4) 38%,transparent 60%)}
+.hero .l{position:absolute;left:0;right:0;bottom:0;z-index:2;padding-bottom:40px}
+.hero h1{font-size:clamp(80px,8.8vw,148px);margin-bottom:28px}
+.hero .sub{max-width:480px;margin:0 0 48px;font-size:19px;color:#D2D2CD}
+.hero .start{position:absolute;left:var(--rail);bottom:72px;z-index:3}
+.hero .start .lb{position:absolute;left:-8px;bottom:22px;white-space:nowrap;color:var(--paper);writing-mode:vertical-rl;transform:rotate(180deg)}
+.hero .start .lb em{font-style:normal;color:var(--mute);text-transform:none;font-weight:400;margin-top:10px}
+.dt{display:grid;grid-template-columns:repeat(4,minmax(0,220px));gap:8px}
+.dt a{display:grid;grid-template-columns:56px minmax(0,1fr);gap:12px;align-items:center;padding:8px 12px 8px 8px;background:rgba(13,13,12,.62);backdrop-filter:blur(8px);box-shadow:inset 0 0 0 1px rgba(225,225,221,.14);text-decoration:none;color:var(--paper);transition:background .3s,box-shadow .3s}
+.dt a:hover{background:rgba(13,13,12,.85);box-shadow:inset 0 0 0 1px var(--kapa)}
+.dt img{width:56px;height:56px;object-fit:cover;filter:grayscale(.5)}
+.dt b{display:block;font:500 22px/.95 "Khartia";text-transform:uppercase}
+.dt span{display:block;font:400 12.5px/1.3 "Inter Tight";color:var(--mute);margin-top:4px}
+
+/* 2 переваги: усі 4 видно, активна велика */
+.fx{height:330vh;position:relative}
+.fx .st{position:sticky;top:0;height:100vh;overflow:hidden;display:grid;grid-template-rows:1fr auto;padding-top:72px}
+.fx .bg2{position:absolute;inset:-4%;background:url(a/okop.jpg) 50% 40%/cover;filter:grayscale(1) brightness(.5);opacity:.22}
+.fx .bg2::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 60% 45%,transparent 15%,var(--ink) 72%)}
+.fx .big{position:relative;display:grid;grid-template-columns:320px minmax(0,1fr) 160px;align-items:center;gap:40px}
+.fx .lab{position:relative;height:200px}
+.fx .lab>div{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;transition:opacity .5s var(--ease),transform .7s var(--ease)}
+.fx .lab>div:not(.on){opacity:0;transform:translateY(14px)}
+.fx .lab .kh{font-size:48px;margin-bottom:14px}
+.fx .lab p{margin:0;color:#BDBDB8;font-size:16px}
+.fx .num{position:relative;height:min(40vh,320px)}
+.fx .n{position:absolute;inset:0;display:flex;justify-content:center;align-items:center;gap:20px;transition:opacity .6s var(--ease),transform .9s var(--ease),filter .6s}
+.fx .n b{font-family:"Khartia";font-weight:500;font-size:min(34vh,290px);line-height:.95}
+.fx .n small{font-family:"Inter Tight";font-size:18px;align-self:flex-end;margin-bottom:4vh;color:var(--mute);max-width:130px;line-height:1.2}
+.fx .n.prev{opacity:0;transform:translateY(-24%) scale(.85);filter:blur(6px)}
+.fx .n.next{opacity:0;transform:translateY(24%) scale(.9);filter:blur(8px)}
+.fx .idx{font-family:"Khartia";font-size:44px;line-height:.95;text-align:right}
+.fx .idx span{color:#6b6b66}
+.fx .row{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-bottom:120px;border-top:1px solid var(--line)}
+.fx .row button{all:unset;cursor:pointer;position:relative;padding:22px 24px 4px 0;display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:end;color:#85857f;transition:color .5s var(--ease)}
+.fx .row button+button{padding-left:24px;border-left:1px solid var(--line)}
+.fx .row button::before{content:"";position:absolute;left:0;right:0;top:-1px;height:3px;background:var(--kapa);transform:scaleX(0);transform-origin:left;transition:transform .7s var(--ease)}
+.fx .row button.on{color:var(--paper)}
+.fx .row button.on::before{transform:none}
+.fx .row button:focus-visible{outline:2px solid var(--kapa);outline-offset:4px}
+.fx .row b{font:500 56px/.85 "Khartia"}
+.fx .row span{font:500 14px/1.3 "Inter Tight"}
+.fx .row span em{display:block;font-style:normal;font-weight:400;color:var(--mute)}
+
+/* 4 посади: чотири рядки, один розгорнутий */
+.pos{background:var(--paper);color:var(--ink);padding:150px calc(var(--rail) + 64px) 150px var(--g)}
+.pos .top{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:40px;align-items:end;margin-bottom:56px}
+.pos h2{font-size:clamp(76px,7.6vw,124px)}
+.pos h2 span{color:#9E9E9E}
+.pos .top p{margin:0;color:#383832;font-size:18px}
+.acc{border-bottom:1px solid #B9B9B3}
+.acc>button{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:grid;grid-template-columns:72px minmax(0,1fr) minmax(0,.9fr) 260px 48px;gap:24px;align-items:center;padding:22px 0;border-top:1px solid #B9B9B3;transition:background .3s}
+.acc>button:hover{background:#D8D8D3}
+.acc>button:focus-visible{outline:2px solid var(--kapa);outline-offset:-2px}
+.acc .no{font:500 15px "Inter Tight";color:#55554e;padding-left:4px}
+.acc .nm{font:500 clamp(40px,3.6vw,56px)/.95 "Khartia";text-transform:uppercase}
+.acc .tg{font-size:17px;color:#383832}
+.acc .rq{justify-self:start;font:600 13px "Inter Tight";text-transform:uppercase;padding:6px 10px;box-shadow:inset 0 0 0 1px var(--kapa);color:#3E5A78}
+.acc .pl{width:48px;height:48px;display:grid;place-items:center;background:var(--ink);color:var(--paper);transition:background .3s}
+.acc .pl svg{width:18px;transition:transform .45s var(--ease)}
+.acc.open .pl{background:var(--kapa);color:var(--ink)}
+.acc.open .pl svg{transform:rotate(45deg)}
+.acc .bd{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s var(--ease)}
+.acc.open .bd{grid-template-rows:1fr}
+.acc .bd>div{overflow:hidden}
+.acc .in{display:grid;grid-template-columns:72px 380px minmax(0,1fr);gap:24px;padding:8px 0 36px}
+.acc .in img{grid-column:2;width:100%;height:280px;object-fit:cover}
+.acc .tx{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 28px;align-content:start}
+.acc .tx h3{margin:0 0 6px;font:600 13px "Inter Tight";text-transform:uppercase;color:#55554e}
+.acc .tx p{margin:0;font-size:15.5px;line-height:1.45;color:#2a2a27}
+.acc .tx ul{margin:0;padding:0;list-style:none;columns:2;column-gap:28px;font-size:15.5px;color:#2a2a27}
+.acc .tx ul li{padding:7px 0;border-top:1px solid #C6C6C0;break-inside:avoid}
+.acc .tx .go{grid-column:1/-1;margin-top:8px}
+
+/* форма й питання */
+.fm{display:grid;grid-template-columns:minmax(0,1fr) 520px;gap:80px;padding-top:150px;padding-bottom:150px;padding-right:calc(var(--rail) + 64px)}
+.fm h2{font-size:clamp(76px,7.6vw,124px);margin-bottom:28px}
+.fm h2 span{color:#9E9E9E}
+.fm .lede{max-width:480px;margin:0 0 28px;font-size:19px;color:#C9C9C4}
+.fm .calm{list-style:none;margin:0 0 56px;padding:0;max-width:480px;display:grid;gap:12px}
+.fm .calm li{position:relative;padding-left:30px;font-size:17px;color:#D2D2CD}
+.fm .calm li::before{content:"";position:absolute;left:2px;top:7px;width:12px;height:6px;border:2px solid var(--kapa);border-top:0;border-right:0;transform:rotate(-45deg)}
+.fm .calm li.todo{padding:10px 14px 10px 30px;background:#1A1A18;box-shadow:inset 0 0 0 1px var(--line);color:var(--mute);font-size:15px}
+.fm .calm li.todo::before{border-color:var(--mute);left:10px;top:17px}
+.fm .calm li.todo b{display:block;font:600 12px "Inter Tight";text-transform:uppercase;color:var(--paper)}
+.fm .end{position:relative;height:1px;margin-bottom:72px}
+.fm .end .lb{position:absolute;left:-8px;top:20px;white-space:nowrap;color:var(--kapa)}
+.fm form{padding-top:110px}
+.fm .tel{display:inline-block;font-family:"Khartia";font-size:200px;line-height:.8;text-decoration:none;margin-top:16px;transition:color .3s}
+.fm .tel:hover{color:var(--kapa)}
+.qa{background:var(--paper);color:var(--ink);padding:140px calc(var(--rail) + 64px) 150px var(--g);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:80px}
+.qa h2{font-size:104px;position:sticky;top:120px;align-self:start}
+.qa .faq details{border-color:#B9B9B3}
+.qa .faq summary:hover{color:#000}
+.qa .faq details p{color:#383832}
+@media (max-width:720px){
+ :root{--rail:18px}.pad{padding-left:48px;padding-right:var(--g)}
+ .hero h1{font-size:58px}.hero .sub{font-size:16px;margin-bottom:24px}.hero .l{padding-bottom:100px}.hero .start{display:none}.dt{grid-template-columns:1fr 1fr}.dt b{font-size:17px}.dt span span{display:none}.dt a{grid-template-columns:40px 1fr}.dt img{width:40px;height:40px}
+ .fx .big{grid-template-columns:1fr;gap:0}.fx .lab{height:150px;order:2}.fx .idx{display:none}.fx .n b{font-size:28vw}.fx .n small{display:none}.fx .num{height:30vh}.fx .row{grid-template-columns:1fr 1fr;margin-bottom:96px}.fx .row b{font-size:36px}.fx .row button+button{padding-left:12px}.fx .row button:nth-child(3){padding-left:0;border-left:0}
+ .how .top,.pos .top,.fm,.qa{grid-template-columns:1fr;gap:40px}.how h2,.pos h2,.fm h2{font-size:60px}
+ .how ol{grid-template-columns:1fr;gap:48px;margin-right:0}.how li{padding-top:0}.how li .node{left:-30px;top:8px}.how li .no{font-size:64px}
+ .pos{padding:90px var(--g) 90px 48px}.acc>button{grid-template-columns:1fr 48px;gap:8px}.acc .no,.acc .tg,.acc .rq{display:none}.acc .in{grid-template-columns:1fr}.acc .in img{grid-column:1;height:220px}.acc .tx{grid-template-columns:1fr}
+ .fm{padding:90px var(--g) 90px 48px}.fm form{padding-top:0}.fm .tel{font-size:120px}.qa{padding:90px var(--g)}.qa h2{position:static;font-size:60px}
+}
+
+/* кубик-вершина */
+.tip{background:none;box-shadow:none}
+.tip .cube{position:absolute;inset:0;background:var(--kapa);box-shadow:0 0 0 6px rgba(105,135,167,.18)}
+
+/* B «Лічильник»: кубик обертається разом із прокруткою, мітка в куті показує номер переваги, під ним 4 поділки */
+.tip .cube{transition:transform .65s cubic-bezier(.3,1.45,.5,1),background .3s}
+.tip .cube::after{content:"";position:absolute;left:3px;top:3px;width:5px;height:5px;background:var(--ink);opacity:0;transition:opacity .3s}
+.tip.fx-on .cube::after{opacity:1}
+.tip .dots{position:absolute;left:5px;top:34px;display:grid;gap:7px;opacity:0;transition:opacity .4s}
+.tip.fx-on .dots{opacity:1}
+.tip .dots i{display:block;width:8px;height:8px;box-shadow:inset 0 0 0 1.5px var(--kapa);transition:background .3s}
+.tip .dots i.on{background:var(--kapa)}
+
+/* Посади 2 «Колонки»: 4 фото-колонки, наведена розширюється й відкриває 3 пункти */
+.gal{display:flex;gap:8px;height:min(78vh,640px)}
+.cl{all:unset;box-sizing:border-box;position:relative;flex:1 1 0;min-width:0;overflow:hidden;cursor:pointer;background:var(--ink);color:var(--paper);transition:flex-grow .75s var(--ease)}
+.cl.open{flex-grow:2.8}
+.cl:focus-visible{outline:2px solid var(--kapa);outline-offset:3px}
+.cl img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) brightness(.55);transition:filter .7s,transform 1.2s var(--ease);transform:scale(1.06)}
+.cl.open img{filter:grayscale(.15) brightness(.7);transform:none}
+.cl::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(13,13,12,.95) 0%,rgba(13,13,12,.5) 45%,transparent 75%)}
+.cl .tx{position:absolute;left:24px;right:24px;bottom:24px;z-index:2}
+.cl .nm{display:block;font:500 clamp(30px,2.6vw,44px)/.95 "Khartia";text-transform:uppercase;hyphens:none}
+.cl .rq{display:block;margin-top:10px;font:500 14px "Inter Tight";color:#BDBDB8}
+.cl .more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s var(--ease)}
+.cl.open .more{grid-template-rows:1fr}
+.cl .more>div{overflow:hidden;min-width:340px}
+.cl ul{margin:18px 0 22px;padding:0;list-style:none;max-width:420px}
+.cl li{padding:8px 0 8px 22px;border-top:1px solid rgba(225,225,221,.18);font-size:15px;color:#D2D2CD;position:relative}
+.cl li::before{content:"";position:absolute;left:1px;top:15px;width:7px;height:7px;background:var(--kapa)}
+.cl .bar{position:absolute;left:0;right:0;top:0;height:3px;background:var(--kapa);transform:scaleX(0);transform-origin:left;transition:transform .7s var(--ease);z-index:2}
+.cl.open .bar{transform:none}
+@media (max-width:720px){.gal{flex-direction:column;height:auto}.cl{flex:none;height:110px;transition:height .6s var(--ease)}.cl.open{height:460px}.cl .nm{font-size:32px}.cl .more>div{min-width:0}}
+
+/* мобільна: лінія лівим полем (x=30), текст її не перетинає */
+@media (max-width:720px){
+ .how li .node{left:-18px}
+ .fm .end{margin-left:-18px}
+ .qa{padding:90px var(--g) 90px 48px}
+ .fx .row{margin-bottom:104px}.fx .num{height:24vh}.fx .lab{height:170px}
+ .fx .row span{font-size:12.5px}
+}
+.srv{margin:16px 0 0;padding:12px 14px;box-shadow:inset 0 0 0 1px #D71920;color:var(--paper);font-size:15px}.srv a{color:inherit}
+</style></head><body id="top">
+<header class="hd"><a class="brand" href="#top" aria-label="КАПА — нагору"><svg class="sign" viewBox="222 259 429 701" aria-hidden="true"><g fill="currentColor"><path d="M 401.41 934.99 L 401.51 530.94 C 401.51 529.54 403.07 528.70 404.24 529.47 L 436.33 550.64 C 436.90 551.03 437.65 551.03 438.23 550.67 L 470.97 530.12 C 472.14 529.39 473.67 530.23 473.67 531.62 L 473.28 934.30 C 473.28 934.88 472.99 935.43 472.51 935.76 L 437.78 959.21 C 437.19 959.61 436.41 959.61 435.81 959.21 L 402.18 936.44 C 401.70 936.12 401.41 935.57 401.41 934.99 "/><path d="M 518.06 810.57 L 542.21 794.41 C 542.69 794.08 542.99 793.53 542.99 792.94 L 542.99 485.35 C 542.99 484.38 542.21 483.59 541.24 483.58 L 520.80 483.46 C 519.07 483.44 518.40 481.20 519.83 480.23 L 647.55 394.17 C 648.71 393.39 650.29 394.23 650.29 395.64 L 650.28 501.83 C 650.28 503.26 648.68 504.09 647.51 503.27 L 618.88 483.27 L 618.88 484.94 L 616.67 837.66 C 616.66 838.24 616.37 838.78 615.89 839.10 L 520.07 903.83 C 518.90 904.62 517.32 903.78 517.32 902.37 L 517.28 812.03 C 517.28 811.44 517.57 810.89 518.06 810.57 "/><path d="M 257.04 838.36 C 256.56 838.04 256.26 837.50 256.26 836.92 L 254.04 482.54 L 252.68 483.5 L 226.76 501.83 C 225.60 502.64 224 501.83 223.98 500.41 L 222.70 394.96 C 222.68 393.54 224.27 392.68 225.44 393.48 L 353.10 479.5 C 354.53 480.46 353.85 482.71 352.12 482.72 L 331.69 482.85 C 330.73 482.85 329.94 483.64 329.94 484.60 L 329.94 792.21 C 329.94 792.79 330.24 793.34 330.73 793.67 L 354.87 809.83 C 355.36 810.16 355.65 810.71 355.65 811.29 L 355.61 901.63 C 355.60 903.04 354.03 903.88 352.86 903.09 Z M 257.04 838.36 "/><path d="M 455.75 431.32 L 421.14 407.97 C 419.98 407.19 418.41 408.01 418.40 409.42 L 417.92 483.93 C 417.91 485.34 416.34 486.17 415.18 485.38 L 364.00 450.90 C 363.52 450.58 363.23 450.03 363.23 449.44 L 363.23 352.90 C 363.23 351.49 364.81 350.65 365.98 351.44 L 410.01 381.31 C 411.17 382.10 412.76 381.26 412.76 379.85 L 412.76 261.44 C 412.76 260.03 414.33 259.19 415.50 259.98 L 460.17 290.03 C 460.66 290.36 460.95 290.91 460.95 291.5 L 460.95 346.58 C 460.95 347.99 462.53 348.83 463.69 348.04 L 508.07 318.14 C 509.23 317.35 510.81 318.19 510.81 319.60 L 510.81 449.46 C 510.81 450.03 510.52 450.58 510.04 450.91 L 459.16 485.73 C 457.99 486.53 456.40 485.69 456.41 484.28 L 456.53 432.78 C 456.53 432.19 456.24 431.65 455.75 431.32 "/></g></svg><svg class="word" viewBox="159.76 80.89 553.47 77.2" aria-hidden="true"><g fill="currentColor"><path d="M 329.60 127.10 L 351.40 98.12 L 356.73 98.12 L 378.50 127.10 L 329.57 127.10 Z M 367.98 80.89 L 341.49 80.89 L 285.73 140.85 L 285.73 157.48 L 306.60 157.48 L 317.16 143.50 L 390.80 143.50 L 401.35 157.48 L 423.59 157.48 L 423.59 140.85 Z"></path><path d="M 619.24 127.10 L 641.04 98.12 L 646.36 98.12 L 668.13 127.10 L 619.21 127.10 Z M 657.62 80.89 L 631.12 80.89 L 575.37 140.85 L 575.37 157.48 L 596.24 157.48 L 606.79 143.50 L 680.43 143.50 L 690.99 157.48 L 713.23 157.48 L 713.23 140.85 Z"></path><path d="M 233.16 118.08 L 276.53 97.42 L 276.53 80.89 L 250.86 80.89 L 210.81 109.84 L 185.43 109.84 L 185.43 80.94 L 159.76 80.94 L 159.76 157.42 L 185.43 157.42 L 185.43 128.17 L 211.77 128.17 L 249.83 157.48 L 277.20 157.48 L 277.20 140.23 L 233.16 120.94 Z"></path><path d="M 433.09 81.50 L 433.09 158.03 L 458.67 158.03 L 458.67 99.91 L 540.27 99.91 L 540.27 158.09 L 565.85 158.09 L 565.85 81.50 Z"></path></g></svg></a>
+<span class="unit">Навчальний батальйон<br>2-й корпус НГУ «Хартія»</span>
+<nav><a href="#umovy">Умови</a><a href="#shliakh">Як перевестися</a><a href="#posady">Напрями</a><a href="#pytannia">Питання</a></nav><a class="tel" href="tel:3333"><svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 2.5h3l1.5 4-2 1.3a10 10 0 0 0 4.7 4.7l1.3-2 4 1.5v3a2 2 0 0 1-2 2A15 15 0 0 1 3 4.5a2 2 0 0 1 2-2Z"/></svg>3333</a></header>
+<main>
+<svg class="path" aria-hidden="true"><path class="bgp"/><path class="fg"/></svg><div class="tip" aria-hidden="true"><i class="cube"></i><span class="dots"><i></i><i></i><i></i><i></i></span></div>
+<section class="hero"><img class="bg" src="a/hero-wide.jpg" alt="Інструктор КАПА з рекрутом в окопі під час заняття" width="1920" height="1080" fetchpriority="high">
+<div class="start node is-hit" data-node="start"><span class="sq"></span><span class="lb">Бойова посада <em>· ти зараз тут</em></span></div>
+<div class="l pad"><h1 class="kh is-in" data-in><span class="ln"><span>Продовжуй</span></span><span class="ln"><span>службу</span></span><span class="ln"><span>в тилу</span></span></h1>
+<p class="sub rv">Служиш на бойовій посаді та розглядаєш переведення у тил? Передай досвід рекрутам у навчальному батальйоні КАПА.</p>
+<nav class="dt rv rv-d1" aria-label="Напрями"><a href="#posady" data-open="instr"><img src="a/dir-instruktory-112.jpg" alt="" width="56" height="56"><span><b>Інструктори</b><span>Бойовий досвід обовʼязковий</span></span></a><a href="#posady" data-open="drill"><img src="a/dir-drill-112.jpg" alt="" width="56" height="56"><span><b>Дрілл-сержанти</b><span>Бойовий досвід бажаний</span></span></a><a href="#posady" data-open="ofic"><img src="a/dir-oficery-112.jpg" alt="" width="56" height="56"><span><b>Офіцерські посади</b><span>Штаб, навчальні роти</span></span></a><a href="#posady" data-open="zabez"><img src="a/dir-zabezpechennia-112.jpg" alt="" width="56" height="56"><span><b>Забезпечення</b><span>8 спеціальностей</span></span></a></nav></div></section>
+
+<section class="fx" id="umovy"><div class="st pad"><div class="bg2"></div>
+<div class="big"><div class="lab"><div class="on"><p class="kh">Додаткові виплати</p><p>Інструкторам і дрілл-сержантам. Плюс грошове забезпечення за посадою та званням.</p></div><div class=""><p class="kh">Щорічна відпустка</p><p>Основна відпустка — до 30 календарних днів. Вихідні — з урахуванням навчального процесу.</p></div><div class=""><p class="kh">У відрядженнях</p><p>Відрядження — для занять і обміну досвідом, без безпосереднього виконання бойових завдань.</p></div><div class=""><p class="kh">Стажування й сертифікація</p><p>Без інструкторської підготовки — стажування другим номером у досвідченого інструктора чи дрілл-сержанта, підготовка й сертифікація.</p></div></div><div class="num"><div class="n on"><b>15–30</b><small>тис. грн</small></div><div class="n next"><b>30</b><small>днів</small></div><div class="n next"><b>0</b><small>бойових завдань</small></div><div class="n next"><b>1</b><small>місяць стажування</small></div></div><div class="idx"><b class="ix">001</b><span>/004</span></div></div>
+<div class="row" role="group" aria-label="Умови служби"><button type="button" class="on"><b>15–30</b><span>тис. грн<em>Додаткові виплати</em></span></button><button type="button" class=""><b>30</b><span>днів<em>Щорічна відпустка</em></span></button><button type="button" class=""><b>0</b><span>бойових завдань<em>У відрядженнях</em></span></button><button type="button" class=""><b>1</b><span>місяць стажування<em>Стажування й сертифікація</em></span></button></div></div></section>
+
+<section class="how pad" id="shliakh"><div class="top"><h2 class="kh rv"><span>Шлях до КАПА —</span><br>чотири кроки</h2><p class="rv">Від заявки до служби. Подробиці твоєї ситуації пояснить контакт-центр 3333.</p></div>
+<ol><li data-step><span class="node" data-node="st0"><span class="sq"></span></span><span class="no">01</span><h3 class="kh">Залиш заявку</h3><p>Обери напрям у формі або телефонуй 3333.</p><div class=act><a class="btn " href="#zaiavka" ><span>Подати заявку</span><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><path d="M3 10h13M11 4.5 16.5 10 11 15.5"/></svg></i></a></div></li><li data-step><span class="node" data-node="st1"><span class="sq"></span></span><span class="no">02</span><h3 class="kh">Пройди співбесіду</h3><p>Розкажи про бойовий і професійний досвід. Тут же підберуть напрям.</p></li><li data-step><span class="node" data-node="st2"><span class="sq"></span></span><span class="no">03</span><h3 class="kh">Оформи переведення</h3><p>Контакт-центр пояснить, які документи потрібні і що далі.</p><div class=act><a class="btn ghost" href="tel:3333" style="--h:48px"><span>3333</span><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><path d="M3 10h13M11 4.5 16.5 10 11 15.5"/></svg></i></a></div></li><li data-step><span class="node" data-node="st3"><span class="sq"></span></span><span class="no">04</span><h3 class="kh">Долучайся до КАПА</h3><p>Пройди необхідну підготовку та розпочинай службу.</p></li></ol></section>
+
+<section class="pos dirs on-l" id="posady" data-light><div class="top"><h2 class="kh rv"><span>Знайди своє</span><br>місце в КАПА</h2><p class="rv">Інструкторські, дрілл-сержантські, офіцерські та посади забезпечення. Обери напрям, у якому зможеш застосувати свій бойовий або професійний досвід.</p></div>
+<div class="gal"><div class="cl open" id="n-instr" tabindex="0" role="button" aria-expanded="true"><img src="a/dir-instruktory.jpg" alt="Інструктори" loading="lazy" width="900" height="900"><span class="bar"></span><div class="tx"><span class="nm">Інструктори</span><span class="rq">Бойовий досвід обовʼязковий</span><div class="more"><div><ul><li>Проводиш заняття й передаєш практичні знання</li><li>Бойовий досвід обовʼязковий</li><li>Без інструкторської підготовки — стажування й сертифікація</li></ul><a class="btn " href="#zaiavka" data-dir="instr"><span>Подати заявку</span><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><path d="M3 10h13M11 4.5 16.5 10 11 15.5"/></svg></i></a></div></div></div></div><div class="cl" id="n-drill" tabindex="0" role="button" aria-expanded="false"><img src="a/dir-drill.jpg" alt="Дрілл-сержанти" loading="lazy" width="900" height="900"><span class="bar"></span><div class="tx"><span class="nm">Дрілл-сержанти</span><span class="rq">Бойовий досвід бажаний</span><div class="more"><div><ul><li>Супровід рекрутів і адаптація до служби</li><li>Підтримка дисципліни та організація підготовки</li><li>Без підготовки — стажування й сертифікація</li></ul><a class="btn " href="#zaiavka" data-dir="drill"><span>Подати заявку</span><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><path d="M3 10h13M11 4.5 16.5 10 11 15.5"/></svg></i></a></div></div></div></div><div class="cl" id="n-ofic" tabindex="0" role="button" aria-expanded="false"><img src="a/dir-oficery.jpg" alt="Офіцерські посади" loading="lazy" width="900" height="900"><span class="bar"></span><div class="tx"><span class="nm">Офіцерські посади</span><span class="rq">Штаб, навчальні роти</span><div class="more"><div><ul><li>Штабні секції та навчальні роти</li><li>Матеріально-технічне забезпечення й забезпечення навчального&nbsp;процесу</li><li>Про конкретну посаду розкажуть у контакт-центрі&nbsp;3333</li></ul><a class="btn " href="#zaiavka" data-dir="ofic"><span>Подати заявку</span><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><path d="M3 10h13M11 4.5 16.5 10 11 15.5"/></svg></i></a></div></div></div></div><div class="cl" id="n-zabez" tabindex="0" role="button" aria-expanded="false"><img src="a/dir-zabezpechennia.jpg" alt="Забезпечення" loading="lazy" width="900" height="900"><span class="bar"></span><div class="tx"><span class="nm">Забезпечення</span><span class="rq">8 спеціальностей</span><div class="more"><div><ul><li>Технічне, матеріальне й організаційне забезпечення</li><li>8 спеціальностей: від OPFOR і стрільбищ до бронетехніки й будівництва</li><li>Напрям допоможуть визначити на співбесіді</li></ul><a class="btn " href="#zaiavka" data-dir="zabez"><span>Подати заявку</span><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><path d="M3 10h13M11 4.5 16.5 10 11 15.5"/></svg></i></a></div></div></div></div></div></section>
+
+<section class="qa on-l" id="pytannia" data-light><div><h2 class="kh">Питання</h2><p style="color:#55554e;margin-top:20px">Подробиці твоєї ситуації — телефоном 3333.</p></div><div class="faq "><details><summary>Чи можна перевестися з бойового підрозділу?<i></i></summary><p>Так. Залиш заявку або телефонуй 3333 — обговоримо твій досвід, підберемо напрям і пояснимо порядок переведення.</p></details><details><summary>Чим я займатимуся в КАПА?<i></i></summary><p>Навчатимеш військових, допомагатимеш рекрутам адаптуватися до служби або забезпечуватимеш роботу навчального батальйону — залежно від посади.</p></details><details><summary>Чи обовʼязковий бойовий досвід?<i></i></summary><p>Для інструкторів — так. Для дрілл-сержантів він бажаний, але не обовʼязковий. Також є посади для фахівців технічних і забезпечувальних напрямів.</p></details><details><summary>А якщо я не маю інструкторської підготовки?<i></i></summary><p>Передбачені стажування з досвідченим інструктором або дрілл-сержантом, необхідна підготовка та сертифікація.</p></details><details><summary>Чи можна служити з обмеженнями за станом здоровʼя?<i></i></summary><p>Так. Відповідний напрям допоможуть визначити під час співбесіди, залежно від висновку ВЛК та вимог посади.</p></details><details><summary>Яке грошове забезпечення?<i></i></summary><p>Відповідно до посади та звання. Для інструкторів і дрілл-сержантів передбачені додаткові виплати від 15 000 до 30 000 грн.</p></details><details><summary>Які умови проживання та відпочинку?<i></i></summary><p>Під час підготовки інструктори й дрілл-сержанти проживають разом із рекрутами. Вихідні надаються з урахуванням навчального процесу. Щорічна основна відпустка — до 30 календарних днів.</p></details><details><summary>Чи передбачені відрядження?<i></i></summary><p>Так, для проведення занять та обміну досвідом у районах виконання завдань бригади. Такі відрядження не передбачають безпосереднього виконання бойових завдань.</p></details></div></section>
+
+<section class="fm pad" id="zaiavka" data-cta-off><div><div class="end node" data-node="end"><span class="sq"></span><span class="lb">КАПА · кінець шляху</span></div><h2 class="kh"><span>Останній крок —</span><br>заявка</h2>
+<p class="lede">Залиш заявку — контакт-центр розповість про посади й пояснить, що далі.</p><ul class="calm"><li>Переведення з бойового підрозділу можливе.</li><li>Контакт-центр обговорить твій досвід, підбере напрям і пояснить порядок переведення.</li><li class="todo"><b>Чекає факту</b>Коли передзвонять і чи бачить заявку командир</li></ul>
+<a class="tel" href="tel:3333">3333</a><span class="lb mute" style="display:block;margin-top:12px">Або зателефонуй у контакт-центр</span></div>
+<form class="lead" novalidate><div class="fields"><input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
+<div class="fld"><label for="f-n">Імʼя *</label><input id="f-n" name="name" required aria-describedby="e-n" autocomplete="given-name" placeholder="Як до тебе звертатися"><div class="em" id="e-n">Вкажи імʼя.</div></div>
+<div class="fld"><label for="f-p">Номер телефону *</label><input id="f-p" name="tel" type="tel" required autocomplete="tel" inputmode="tel" placeholder="+380" aria-describedby="e-p"><div class="em" id="e-p">Перевір номер: потрібно 10 цифр або більше.</div></div>
+<div class="fld"><label for="f-d">Напрям служби</label><select id="f-d" name="dir"><option value="">Потрібна консультація</option><option value="instr">Інструктори</option><option value="drill">Дрілл-сержанти</option><option value="ofic">Офіцерські посади</option><option value="zabez">Забезпечення</option></select></div>
+<div class="fld"><label>Статус</label><div class="seg"><label><input type="radio" name="st" value="mil" checked><span>Військовий</span></label><label><input type="radio" name="st" value="civ"><span>Цивільний</span></label></div></div>
+<label class="chk fld"><input type="checkbox" name="consent" required aria-describedby="e-c"><span>Погоджуюся на обробку персональних даних. <a href="privacy.html">Політика конфіденційності</a><span class="em" id="e-c">Потрібна згода, щоб передати заявку.</span></span></label>
+<button class="btn" type="submit"><span>Подати заявку</span><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><path d="M3 10h13M11 4.5 16.5 10 11 15.5"/></svg></i></button>
+<p class="srv" role="alert" hidden></p><p class="lb mute" style="margin:16px 0 0;text-transform:none;font-weight:400">Заявка надходить до контакт-центру 3333.</p></div>
+<div class="done" role="status"><p class="kh" tabindex="-1" style="font-size:64px">Дякуємо!</p><p style="max-width:420px">Заявку передано до контакт-центру. Команда звʼяжеться з тобою. Маєш питання — телефонуй <a href="tel:3333">3333</a>.</p></div></form></section>
+
+</main><footer class="ft" data-cta-off><svg class="sign" viewBox="222 259 429 701" aria-hidden="true"><g fill="currentColor"><path d="M 401.41 934.99 L 401.51 530.94 C 401.51 529.54 403.07 528.70 404.24 529.47 L 436.33 550.64 C 436.90 551.03 437.65 551.03 438.23 550.67 L 470.97 530.12 C 472.14 529.39 473.67 530.23 473.67 531.62 L 473.28 934.30 C 473.28 934.88 472.99 935.43 472.51 935.76 L 437.78 959.21 C 437.19 959.61 436.41 959.61 435.81 959.21 L 402.18 936.44 C 401.70 936.12 401.41 935.57 401.41 934.99 "/><path d="M 518.06 810.57 L 542.21 794.41 C 542.69 794.08 542.99 793.53 542.99 792.94 L 542.99 485.35 C 542.99 484.38 542.21 483.59 541.24 483.58 L 520.80 483.46 C 519.07 483.44 518.40 481.20 519.83 480.23 L 647.55 394.17 C 648.71 393.39 650.29 394.23 650.29 395.64 L 650.28 501.83 C 650.28 503.26 648.68 504.09 647.51 503.27 L 618.88 483.27 L 618.88 484.94 L 616.67 837.66 C 616.66 838.24 616.37 838.78 615.89 839.10 L 520.07 903.83 C 518.90 904.62 517.32 903.78 517.32 902.37 L 517.28 812.03 C 517.28 811.44 517.57 810.89 518.06 810.57 "/><path d="M 257.04 838.36 C 256.56 838.04 256.26 837.50 256.26 836.92 L 254.04 482.54 L 252.68 483.5 L 226.76 501.83 C 225.60 502.64 224 501.83 223.98 500.41 L 222.70 394.96 C 222.68 393.54 224.27 392.68 225.44 393.48 L 353.10 479.5 C 354.53 480.46 353.85 482.71 352.12 482.72 L 331.69 482.85 C 330.73 482.85 329.94 483.64 329.94 484.60 L 329.94 792.21 C 329.94 792.79 330.24 793.34 330.73 793.67 L 354.87 809.83 C 355.36 810.16 355.65 810.71 355.65 811.29 L 355.61 901.63 C 355.60 903.04 354.03 903.88 352.86 903.09 Z M 257.04 838.36 "/><path d="M 455.75 431.32 L 421.14 407.97 C 419.98 407.19 418.41 408.01 418.40 409.42 L 417.92 483.93 C 417.91 485.34 416.34 486.17 415.18 485.38 L 364.00 450.90 C 363.52 450.58 363.23 450.03 363.23 449.44 L 363.23 352.90 C 363.23 351.49 364.81 350.65 365.98 351.44 L 410.01 381.31 C 411.17 382.10 412.76 381.26 412.76 379.85 L 412.76 261.44 C 412.76 260.03 414.33 259.19 415.50 259.98 L 460.17 290.03 C 460.66 290.36 460.95 290.91 460.95 291.5 L 460.95 346.58 C 460.95 347.99 462.53 348.83 463.69 348.04 L 508.07 318.14 C 509.23 317.35 510.81 318.19 510.81 319.60 L 510.81 449.46 C 510.81 450.03 510.52 450.58 510.04 450.91 L 459.16 485.73 C 457.99 486.53 456.40 485.69 456.41 484.28 L 456.53 432.78 C 456.53 432.19 456.24 431.65 455.75 431.32 "/></g></svg><span>Навчальний батальйон КАПА · 2-й корпус НГУ «Хартія»</span>
+<span class="r"><a href="tel:3333">Контакт-центр 3333</a><a href="privacy.html">Політика конфіденційності</a></span></footer><div class="cta"><a class="btn " href="#zaiavka" ><span>Подати заявку</span><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><path d="M3 10h13M11 4.5 16.5 10 11 15.5"/></svg></i></a></div>
+<script src="base.js"></script><script>
+(function(){
+ var main=document.querySelector('main'),svg=main.querySelector('.path'),bg=svg.querySelector('.bgp'),fg=svg.querySelector('.fg'),tip=main.querySelector('.tip');
+ var nodes=[].slice.call(main.querySelectorAll('[data-node]'));
+ var L=0,keys=[],hits=[];
+ function pos(el){var r=el.getBoundingClientRect(),m=main.getBoundingClientRect();return{x:r.left-m.left,y:r.top-m.top}}
+ function build(){
+  var W=main.clientWidth,rail=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--rail'))||96;
+  var mob=W<=720;
+  var s=pos(main.querySelector('[data-node=start]'));
+  var st=[0,1,2,3].map(function(i){return pos(main.querySelector('[data-node=st'+i+']'))});
+  var e=pos(main.querySelector('[data-node=end]'));
+  var R=W-rail, vh=innerHeight, pts, kf;
+  if(mob){
+   var x=30;pts=[[x,s.y]].concat(st.map(function(p){return[x,p.y]}),[[x,e.y]]);
+  }else{
+   var dirs=main.querySelector('.dirs'),dy=pos(dirs).y;
+   pts=[[s.x,s.y],[s.x,st[0].y],[st[3].x,st[3].y],[R,st[3].y],[R,e.y],[e.x,e.y]];
+  }
+  // шлях із заокругленими кутами
+  var r=28,d='M'+pts[0][0]+' '+pts[0][1];
+  for(var i=1;i<pts.length;i++){
+   var p=pts[i],q=pts[i-1],n=pts[i+1];
+   if(!n){d+=' L'+p[0]+' '+p[1];break}
+   var ux=Math.sign(p[0]-q[0]),uy=Math.sign(p[1]-q[1]),vx=Math.sign(n[0]-p[0]),vy=Math.sign(n[1]-p[1]);
+   var rr=Math.min(r,Math.abs(p[0]-q[0]+p[1]-q[1])/2,Math.abs(n[0]-p[0]+n[1]-p[1])/2);
+   d+=' L'+(p[0]-ux*rr)+' '+(p[1]-uy*rr)+' Q'+p[0]+' '+p[1]+' '+(p[0]+vx*rr)+' '+(p[1]+vy*rr);
+  }
+  svg.setAttribute('width',W);svg.setAttribute('height',main.scrollHeight);svg.style.width=W+'px';svg.style.height=main.scrollHeight+'px';
+  bg.setAttribute('d',d);fg.setAttribute('d',d);L=fg.getTotalLength();
+  fg.style.strokeDasharray=L;
+  // ключі: довжина ↔ прокрутка. Вертикальні ділянки малюються на 60 % висоти екрана, горизонтальна — поки кроки проходять екран.
+  var N=Math.ceil(L/6),samp=[];
+  for(var k=0;k<=N;k++){var l=Math.min(L,k*6),pt=fg.getPointAtLength(l);samp.push([l,pt.x,pt.y])}
+  var hy=st[0].y,top=main.getBoundingClientRect().top+scrollY,M=.4,prev=null,z0=hy-r-vh*.5;
+  keys=samp.map(function(a){
+   var y=a[2],sc;
+   if(!mob&&Math.abs(y-hy)<1.5&&a[1]>s.x+r&&a[1]<R-r&&prev)sc=prev[1]+(a[0]-prev[0])*M; // горизонталь: стала швидкість
+   else{var f=.6;if(!mob&&a[1]<=s.x+r+1&&y>z0){var u=Math.min(1,(y-z0)/(vh*.5));f=.6+.2*u*u*(3-2*u)}sc=top+y-vh*f}
+   if(prev)sc=Math.max(sc,prev[1]+(a[0]-prev[0])*M); // без плато: вершина не перескакує
+   prev=[a[0],sc];return[a[0],sc,a[1],a[2]];
+  });
+  hits=nodes.map(function(el){var p=pos(el),best=0,bd=1e9;keys.forEach(function(k){var dd=Math.abs(k[2]-p.x)+Math.abs(k[3]-p.y);if(dd<bd){bd=dd;best=k[0]}});return[el,best]});
+ }
+ function at(y){
+  if(!keys.length)return 0;if(y<=keys[0][1])return keys[0][0];
+  for(var i=1;i<keys.length;i++)if(keys[i][1]>=y){var a=keys[i-1],b=keys[i],t=(b[1]-a[1])?(y-a[1])/(b[1]-a[1]):1;return a[0]+(b[0]-a[0])*t}
+  return L;
+ }
+ K.ticks.push(function(y){
+  var l=K.motion?at(y):L;fg.style.strokeDashoffset=L-l;
+  var p=fg.getPointAtLength(l);tip.style.transform='translate('+p.x+'px,'+p.y+'px)';
+  hits.forEach(function(h){var on=l>=h[1]-2;h[0].classList.toggle('is-hit',on);var li=h[0].closest('[data-step]');if(li)li.classList.toggle('is-hit',on)});
+ });
+ addEventListener('load',function(){build();K.tick()});addEventListener('resize',function(){build();K.tick()});
+ document.fonts&&document.fonts.ready.then(function(){build();K.tick()});build();
+ })();
+(function(){
+ var fx=document.querySelector('.fx'),ns=fx.querySelectorAll('.n'),ls=fx.querySelectorAll('.lab>div'),bs=fx.querySelectorAll('.row button'),ix=fx.querySelector('.ix'),bg=fx.querySelector('.bg2'),cur=-1;
+ var tip=document.querySelector('.tip'),cube=tip.querySelector('.cube'),dots=[].slice.call(tip.querySelectorAll('.dots i')),CUBE="B";
+ function show(f,pin){if(f===cur)return;var was=cur;cur=f;ns.forEach(function(e,i){e.className='n'+(i===f?' on':i<f?' prev':' next')});
+  ls.forEach(function(e,i){e.classList.toggle('on',i===f)});bs.forEach(function(e,i){e.classList.toggle('on',i===f)});ix.textContent='00'+(f+1);
+  if(CUBE==='A'&&pin&&was>=0&&K.motion){tip.classList.remove('kick');void tip.offsetWidth;tip.classList.add('kick')}}
+ K.ticks.push(function(){var q=K.progress(fx),r=fx.getBoundingClientRect(),pin=r.top<=1&&r.bottom>=innerHeight-1;
+  tip.classList.toggle('fx-on',pin);show(Math.min(3,Math.floor(q*4.0001)),pin);if(K.motion)bg.style.transform='scale('+(1.1-q*.1)+')';
+  if(CUBE==='A'&&pin){var lb=fx.querySelector('.lab'),h=lb.querySelector('.on .kh');if(h){var hr=h.getBoundingClientRect(),d=innerHeight*.6-(hr.top+hr.height/2);if(Math.abs(d)>1)lb.style.top=((parseFloat(lb.style.top)||0)+d)+'px'}}
+  if(CUBE==='B'){cube.style.transform='rotate('+(90*cur)+'deg)';dots.forEach(function(d,i){d.classList.toggle('on',i<=cur)})}});
+ bs.forEach(function(b,i){b.addEventListener('click',function(){var top=fx.getBoundingClientRect().top+scrollY;scrollTo({top:top+(fx.offsetHeight-innerHeight)*(i+.5)/4,behavior:'smooth'})})});
+ // посади: завжди один розкритий; наведення (десктоп) або тап перемикає
+ var its=[].slice.call(document.querySelectorAll('.rw,.cl')),hov=matchMedia('(hover:hover) and (pointer:fine)').matches,tm=0;
+ function open(a,scroll){its.forEach(function(o){var on=o===a;o.classList.toggle('open',on);var b=o.matches('.rw')?o.querySelector('button'):o;b.setAttribute('aria-expanded',on)});
+  setTimeout(function(){window.dispatchEvent(new Event('resize'))},800);
+  if(scroll)setTimeout(function(){scrollTo({top:a.getBoundingClientRect().top+scrollY-110,behavior:'smooth'})},50)}
+ its.forEach(function(a){
+  a.addEventListener('click',function(e){if(!e.target.closest('a'))open(a)});
+  a.addEventListener('keydown',function(e){if(a.matches('.cl')&&(e.key==='Enter'||e.key===' ')&&!e.target.closest('a')){e.preventDefault();open(a)}});
+  if(hov){a.addEventListener('mouseenter',function(){clearTimeout(tm);tm=setTimeout(function(){open(a)},140)});a.addEventListener('mouseleave',function(){clearTimeout(tm)})}
+ });
+ document.querySelectorAll('.dt a').forEach(function(t){t.addEventListener('click',function(e){e.preventDefault();open(document.getElementById('n-'+t.dataset.open),true)})});
+})();
+</script></body></html>
