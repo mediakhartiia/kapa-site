@@ -340,8 +340,10 @@ html.md-lock{overflow:hidden}
   for(var i=1;i<keys.length;i++)if(keys[i][1]>=y){var a=keys[i-1],b=keys[i],t=(b[1]-a[1])?(y-a[1])/(b[1]-a[1]):1;scr=a[4]&&b[4];return a[0]+(b[0]-a[0])*t}
   return L;
  }
+ var py=0,rest=0;
  K.ticks.push(function(y){
-  var l=at(y);fg.style.strokeDashoffset=L-l;
+  var l=at(y),ext=scr?Math.max(0,Math.min(12,y-py)):0;py=y;fg.style.strokeDashoffset=L-Math.min(L,l+ext);
+  clearTimeout(rest);if(ext)rest=setTimeout(K.tick,140);
   var p=fg.getPointAtLength(l);if(scr){var m=main.getBoundingClientRect();tip.style.position='fixed';tip.style.transform='translate('+Math.round(p.x+m.left)+'px,'+Math.round(p.y+m.top)+'px)'}else{tip.style.position='';tip.style.transform='translate('+p.x+'px,'+p.y+'px)'}
   hits.forEach(function(h){var on=l>=h[1]-2;h[0].classList.toggle('is-hit',on);var li=h[0].closest('[data-step]');if(li)li.classList.toggle('is-hit',on)});
  });
