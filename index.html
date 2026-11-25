@@ -273,6 +273,21 @@ html.md-lock{overflow:hidden}
  .fx .n small{display:block;font-size:16px;max-width:96px;margin-bottom:5vw}
 }
 
+/* раунд 8.4 (Данило 25.11): блок заявки на десктопі вміщається в один екран — розміри від висоти вікна */
+@media (min-width:721px){
+ .fm{box-sizing:border-box;min-height:100vh;padding-top:clamp(92px,11vh,150px);padding-bottom:clamp(32px,5vh,150px);align-items:start}
+ .fm .end{margin-bottom:clamp(36px,6vh,72px)}
+ .fm h2{font-size:min(clamp(76px,7.6vw,124px),10.4vh);margin-bottom:clamp(14px,2.4vh,28px)}
+ .fm .lede{margin-bottom:clamp(14px,2.2vh,28px)}
+ .fm .calm{margin-bottom:clamp(20px,4.4vh,56px);gap:clamp(6px,1vh,12px)}
+ .fm .tel{font-size:min(200px,15vh);margin-top:0}
+ .fm .tel+.lb{margin-top:8px!important}
+ .fm form{padding-top:clamp(24px,5vh,110px)}
+}
+@media (min-width:721px) and (max-height:800px){
+ .fm .calm li{font-size:15px}.fm .lede{font-size:17px}.fm .tel{font-size:12vh}.fm .end{margin-bottom:28px}.fm{padding-top:86px}
+}
+
 /* мобільна: лінія лівим полем (x=30), текст її не перетинає */
 @media (max-width:720px){
  .how li .node{left:-18px}
