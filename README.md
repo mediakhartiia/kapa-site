@@ -2,4 +2,4 @@
 
 Статичний лендинг на Vercel: `index.html` (одна сторінка для десктопа й мобільної), `base.css`, `base.js`, `a/` (шрифти й фото), `privacy.html` (чернетка). Заявки йдуть через `api/lead.js` на `LEAD_WEBHOOK_URL`; без нього форма показує «Не вдалося надіслати заявку… телефонуй 3333». Правила — `CLAUDE.md`, задача для бекенду — `HANDOFF.md`.
 
-Сторінку збирає генератор у проєкті «Хартія — бренд» (/mnt/project-files/kapa-landing/raund-7/build_site.py).
+Сторінку збирає генератор у проєкті «Хартія — бренд» (/mnt/project-files/kapa-landing/raund-8/build_site.py; варіант першого екрана — `HERO=A|B`).
