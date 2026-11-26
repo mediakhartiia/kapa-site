@@ -329,6 +329,19 @@ html.md-lock{overflow:hidden}
  .cl .bar,.cl.open .bar{transform:scaleX(0)}
 }
 
+/* раунд 9.4: ряд умов на телефоні — рівна сітка 2×2, цифра + одиниця */
+@media (max-width:720px){
+ .fx .row button{grid-template-columns:auto minmax(0,1fr);align-items:center;gap:10px;min-height:68px;box-sizing:border-box;padding:12px 10px 12px 0}
+ .fx .row button+button{padding-left:14px}
+ .fx .row button:nth-child(3){padding-left:0}
+ .fx .row button:nth-child(n+3){border-top:1px solid var(--line)}
+ .fx .row b{font-size:36px}
+ .fx .row span{font-size:13px;line-height:1.25}
+ .fx .row span em{display:none}
+ /* вузькі телефони (320): заголовок переваги в один рядок, щоб не наїжджав на цифру */
+ .fx .lab .kh{font-size:min(48px,13.4vw)}
+}
+
 /* мобільна: лінія лівим полем (x=30), текст її не перетинає */
 @media (max-width:720px){
  .how li .node{left:-18px}
