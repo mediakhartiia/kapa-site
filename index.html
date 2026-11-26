@@ -317,6 +317,10 @@ html.md-lock{overflow:hidden}
  .fx .bg2{transform:none!important;will-change:auto}
 }
 
+/* раунд 9.2: відео на першому екрані поверх фото */
+.hero .bgv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s var(--ease);pointer-events:none}
+.hero .bgv.on{opacity:1}
+
 /* мобільна: лінія лівим полем (x=30), текст її не перетинає */
 @media (max-width:720px){
  .how li .node{left:-18px}
@@ -332,7 +336,7 @@ html.md-lock{overflow:hidden}
 <nav><a href="#umovy">Умови</a><a href="#shliakh">Як перевестися</a><a href="#posady">Напрями</a><a href="#pytannia">Питання</a></nav><a class="tel" href="tel:3333"><svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 2.5h3l1.5 4-2 1.3a10 10 0 0 0 4.7 4.7l1.3-2 4 1.5v3a2 2 0 0 1-2 2A15 15 0 0 1 3 4.5a2 2 0 0 1 2-2Z"/></svg>3333</a></header>
 <main>
 <svg class="path" aria-hidden="true"><path class="bgp"/><path class="fg"/><path class="fg fgc"/></svg><div class="tip" aria-hidden="true"><i class="cube"></i><span class="dots"><i></i><i></i><i></i><i></i></span></div>
-<section class="hero"><img class="bg" src="a/hero-wide.jpg" alt="Інструктор КАПА з рекрутом в окопі під час заняття" width="1920" height="1080" fetchpriority="high">
+<section class="hero"><img class="bg" src="a/hero-wide.jpg" alt="Інструктор КАПА з рекрутом в окопі під час заняття" width="1920" height="1080" fetchpriority="high"><video class="bgv" muted playsinline loop preload="none" aria-hidden="true" tabindex="-1"></video>
 <div class="start node is-hit" data-node="start"><span class="sq"></span><span class="lb">Бойова посада <em>· ти зараз тут</em></span></div>
 <div class="l pad"><p class="kick"><span>Навчальний батальйон КАПА<br>2-й корпус НГУ «Хартія»</span></p><h1 class="kh is-in" data-in><span class="ln"><span>Продовжуй</span></span><span class="ln"><span>службу</span></span><span class="ln"><span>в тилу</span></span></h1>
 <p class="sub rv">Служиш на бойовій посаді та розглядаєш переведення у тил? Передай досвід рекрутам у навчальному батальйоні КАПА.</p>
@@ -492,5 +496,15 @@ setTimeout(function(){[].forEach.call(document.querySelectorAll('.hero .rv'),fun
    if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}}
  });
  document.querySelectorAll('.dt a').forEach(function(t){t.addEventListener('click',function(e){e.preventDefault();open(document.getElementById('n-'+t.dataset.open),true)})});
+})();
+
+(function(){var v=document.querySelector('.hero .bgv');if(!v)return;
+ var c=navigator.connection;if(!K.motion||(c&&(c.saveData||/2g/.test(c.effectiveType||''))))return;
+ function go(){v.src=matchMedia('(max-aspect-ratio:1/1)').matches?'a/hero-v.mp4':'a/hero-h.mp4';
+  v.addEventListener('playing',function(){v.classList.add('on')},{once:true});
+  var p=v.play();if(p&&p.catch)p.catch(function(){});
+  // поза екраном — пауза: не вантажить процесор під час прокрутки
+  if('IntersectionObserver'in window)new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var q=v.play();if(q&&q.catch)q.catch(function(){})}else v.pause()})}).observe(v.parentNode);}
+ if(document.readyState==='complete')setTimeout(go,300);else addEventListener('load',function(){setTimeout(go,300)});
 })();
 </script></body></html>
