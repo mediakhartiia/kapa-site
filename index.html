@@ -311,6 +311,12 @@ html.md-lock{overflow:hidden}
  .fx .num>.n:first-child b{line-height:.78}
 }
 
+/* раунд 9.1: легша прокрутка на телефоні */
+@media (max-width:720px){
+ .hd.is-solid{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(13,13,12,.96)}
+ .fx .bg2{transform:none!important;will-change:auto}
+}
+
 /* мобільна: лінія лівим полем (x=30), текст її не перетинає */
 @media (max-width:720px){
  .how li .node{left:-18px}
@@ -426,7 +432,8 @@ html.md-lock{overflow:hidden}
   hits.forEach(function(h){var on=l>=h[1]-2;h[0].classList.toggle('is-hit',on);var li=h[0].closest('[data-step]');if(li)li.classList.toggle('is-hit',on)});
  });
  function rb(){build();K.tick()}
- addEventListener('load',rb);addEventListener('resize',rb);document.fonts&&document.fonts.ready.then(rb);build();
+ var rw=innerWidth,rh=innerHeight,rt=0;
+ addEventListener('load',rb);addEventListener('resize',function(){if(innerWidth===rw&&Math.abs(innerHeight-rh)<rh*.2)return;rw=innerWidth;rh=innerHeight;clearTimeout(rt);rt=setTimeout(rb,150)});document.fonts&&document.fonts.ready.then(rb);build();
 })();
 setTimeout(function(){[].forEach.call(document.querySelectorAll('.hero .rv'),function(e){e.classList.add('is-in')})},350);
 (function(){
@@ -436,7 +443,7 @@ setTimeout(function(){[].forEach.call(document.querySelectorAll('.hero .rv'),fun
   ls.forEach(function(e,i){e.classList.toggle('on',i===f)});bs.forEach(function(e,i){e.classList.toggle('on',i===f)});ix.textContent='00'+(f+1);
   if(CUBE==='A'&&pin&&was>=0&&K.motion){tip.classList.remove('kick');void tip.offsetWidth;tip.classList.add('kick')}}
  K.ticks.push(function(){var q=K.progress(fx),r=fx.getBoundingClientRect(),pin=r.top<=1&&r.bottom>=innerHeight-1;
-  tip.classList.toggle('fx-on',pin);show(Math.min(3,Math.floor(q*4.0001)),pin);if(K.motion)bg.style.transform='scale('+(1.1-q*.1)+')';
+  tip.classList.toggle('fx-on',pin);show(Math.min(3,Math.floor(q*4.0001)),pin);if(K.motion&&innerWidth>720)bg.style.transform='scale('+(1.1-q*.1)+')';
   if(CUBE==='A'&&pin){var lb=fx.querySelector('.lab'),h=lb.querySelector('.on .kh');if(h){var hr=h.getBoundingClientRect(),d=innerHeight*.6-(hr.top+hr.height/2);if(Math.abs(d)>1)lb.style.top=((parseFloat(lb.style.top)||0)+d)+'px'}}
   if(CUBE==='B'){cube.style.transform='rotate('+(90*cur)+'deg)';dots.forEach(function(d,i){d.classList.toggle('on',i<=cur)})}});
  bs.forEach(function(b,i){b.addEventListener('click',function(){var top=fx.getBoundingClientRect().top+scrollY;scrollTo({top:top+(fx.offsetHeight-innerHeight)*(i+.5)/4,behavior:'smooth'})})});
