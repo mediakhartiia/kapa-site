@@ -297,6 +297,20 @@ html.md-lock{overflow:hidden}
 .hero .kick::before{content:"";width:10px;height:10px;background:var(--kapa);flex:none}
 @media (max-width:720px){.hd .unit.corps{display:none}.hero .kick{font-size:12px;margin-bottom:16px;gap:10px}.hero .kick::before{width:8px;height:8px}}
 
+/* раунд 9 · 1: корпус окремим рядком, квадрат на рівні першого рядка */
+.hero .kick{align-items:flex-start}
+.hero .kick::before{margin-top:calc((1.3em - 10px)/2)}
+@media (max-width:720px){.hero .kick::before{margin-top:calc((1.3em - 8px)/2)}}
+
+/* раунд 9 · 2: «стандартне ГЗ +» перед сумою; на мобільній — рядком над цифрою */
+/* класи .n перемикає скрипт, тому чіпляємось за перший .n */
+.fx .n small.pre{color:var(--paper);white-space:nowrap}
+@media (max-width:720px){
+ .fx .num>.n:first-child{display:grid;grid-template-columns:auto minmax(0,1fr);align-content:end;align-items:end;column-gap:14px;bottom:-12px}
+ .fx .n small.pre{grid-column:1/-1;max-width:none;margin:0 0 6px;align-self:auto}
+ .fx .num>.n:first-child b{line-height:.78}
+}
+
 /* мобільна: лінія лівим полем (x=30), текст її не перетинає */
 @media (max-width:720px){
  .how li .node{left:-18px}
@@ -314,12 +328,12 @@ html.md-lock{overflow:hidden}
 <svg class="path" aria-hidden="true"><path class="bgp"/><path class="fg"/><path class="fg fgc"/></svg><div class="tip" aria-hidden="true"><i class="cube"></i><span class="dots"><i></i><i></i><i></i><i></i></span></div>
 <section class="hero"><img class="bg" src="a/hero-wide.jpg" alt="Інструктор КАПА з рекрутом в окопі під час заняття" width="1920" height="1080" fetchpriority="high">
 <div class="start node is-hit" data-node="start"><span class="sq"></span><span class="lb">Бойова посада <em>· ти зараз тут</em></span></div>
-<div class="l pad"><p class="kick">Навчальний батальйон КАПА · 2-й корпус НГУ «Хартія»</p><h1 class="kh is-in" data-in><span class="ln"><span>Продовжуй</span></span><span class="ln"><span>службу</span></span><span class="ln"><span>в тилу</span></span></h1>
+<div class="l pad"><p class="kick"><span>Навчальний батальйон КАПА<br>2-й корпус НГУ «Хартія»</span></p><h1 class="kh is-in" data-in><span class="ln"><span>Продовжуй</span></span><span class="ln"><span>службу</span></span><span class="ln"><span>в тилу</span></span></h1>
 <p class="sub rv">Служиш на бойовій посаді та розглядаєш переведення у тил? Передай досвід рекрутам у навчальному батальйоні КАПА.</p>
 </div></section>
 
 <section class="fx" id="umovy"><div class="st pad"><div class="bg2"></div>
-<div class="big"><div class="lab"><div class="on"><p class="kh">Додаткові виплати</p><p>Інструкторам і дрілл-сержантам. Плюс грошове забезпечення за посадою та званням.</p></div><div class=""><p class="kh">Щорічна відпустка</p><p>Основна відпустка — до 30 календарних днів. Вихідні — з урахуванням навчального процесу.</p></div><div class=""><p class="kh">У відрядженнях</p><p>Відрядження — для занять і обміну досвідом, без безпосереднього виконання бойових завдань.</p></div><div class=""><p class="kh">Стажування й сертифікація</p><p>Без інструкторської підготовки — стажування другим номером у досвідченого інструктора чи дрілл-сержанта, підготовка й сертифікація.</p></div></div><div class="num"><div class="n on"><b>15–30</b><small>тис. грн</small></div><div class="n next"><b>30</b><small>днів</small></div><div class="n next"><b>0</b><small>бойових завдань</small></div><div class="n next"><b>1</b><small>місяць стажування</small></div></div><div class="idx"><b class="ix">001</b><span>/004</span></div></div>
+<div class="big"><div class="lab"><div class="on"><p class="kh">Додаткові виплати</p><p>Інструкторам і дрілл-сержантам. Плюс грошове забезпечення за посадою та званням.</p></div><div class=""><p class="kh">Щорічна відпустка</p><p>Основна відпустка — до 30 календарних днів. Вихідні — з урахуванням навчального процесу.</p></div><div class=""><p class="kh">У відрядженнях</p><p>Відрядження — для занять і обміну досвідом, без безпосереднього виконання бойових завдань.</p></div><div class=""><p class="kh">Стажування й сертифікація</p><p>Без інструкторської підготовки — стажування другим номером у досвідченого інструктора чи дрілл-сержанта, підготовка й сертифікація.</p></div></div><div class="num"><div class="n on"><small class="pre">стандартне ГЗ +</small><b>15–30</b><small>тис. грн</small></div><div class="n next"><b>30</b><small>днів</small></div><div class="n next"><b>0</b><small>бойових завдань</small></div><div class="n next"><b>1</b><small>місяць стажування</small></div></div><div class="idx"><b class="ix">001</b><span>/004</span></div></div>
 <div class="row" role="group" aria-label="Умови служби"><button type="button" class="on"><b>15–30</b><span>тис. грн<em>Додаткові виплати</em></span></button><button type="button" class=""><b>30</b><span>днів<em>Щорічна відпустка</em></span></button><button type="button" class=""><b>0</b><span>бойових завдань<em>У відрядженнях</em></span></button><button type="button" class=""><b>1</b><span>місяць стажування<em>Стажування й сертифікація</em></span></button></div></div></section>
 
 <div class="howw"><section class="how pad" id="shliakh"><svg class="path hp" aria-hidden="true"><path class="bgp"/><path class="fg"/></svg><div class="top"><h2 class="kh rv"><span>Шлях до КАПА —</span><br>чотири кроки</h2><p class="rv">Від заявки до служби. Подробиці твоєї ситуації пояснить контакт-центр 3333.</p></div>
@@ -433,13 +447,19 @@ setTimeout(function(){[].forEach.call(document.querySelectorAll('.hero .rv'),fun
   if(scroll)setTimeout(function(){scrollTo({top:a.getBoundingClientRect().top+scrollY-110,behavior:'smooth'})},50)}
  var md=document.getElementById('md'),mLast=null,mc=null;
  function focusables(){return [].slice.call(mc.querySelectorAll('a[href],button'))}
+ var hst=false,goApply=null;
  function mShow(k,from){
   mc=document.getElementById('md-'+k);if(!mc)return;mLast=from||document.activeElement;
+  if(!hst){try{history.pushState({kapaMd:k},'');hst=true}catch(e){}}
   [].forEach.call(md.querySelectorAll('.pn'),function(p){p.classList.toggle('on',p===mc)});
   md.hidden=false;document.documentElement.classList.add('md-lock');mc.scrollTop=0;var sc=mc.querySelector('.sc');if(sc)sc.scrollTop=0;
   [].forEach.call(document.querySelectorAll('body>*:not(.md):not(script)'),function(e){e.inert=true});md.inert=false;
   requestAnimationFrame(function(){md.classList.add('in');mc.querySelector('.x').focus()});
  }
+ // закриття хрестиком, тлом, Esc чи «Подати заявку» йде через history.back(): запис вікна знімається, «назад» далі веде як звичайно
+ function mClose(ret,then){if(md.hidden)return;if(hst){goApply=then||null;mRet=ret;history.back()}else{mHide(ret);if(then)then()}}
+ var mRet;
+ addEventListener('popstate',function(){if(!hst)return;hst=false;mHide(mRet);mRet=undefined;var f=goApply;goApply=null;if(f)f()});
  function mHide(ret){
   if(md.hidden)return;md.classList.remove('in');
   [].forEach.call(document.querySelectorAll('body>*'),function(e){e.inert=false});
@@ -453,14 +473,14 @@ setTimeout(function(){[].forEach.call(document.querySelectorAll('.hero .rv'),fun
   if(hov){a.addEventListener('mouseenter',function(){clearTimeout(tm);tm=setTimeout(function(){open(a)},140)});a.addEventListener('mouseleave',function(){clearTimeout(tm)})}
  });
  md.addEventListener('click',function(e){
-  if(e.target.closest('[data-close]')){mHide();return}
+  if(e.target.closest('[data-close]')){mClose();return}
   var ap=e.target.closest('[data-apply]');
   if(ap){e.preventDefault();var s=document.querySelector('form.lead select[name=dir]');if(s)s.value=ap.getAttribute('data-dir');
-   mHide(false);var f=document.getElementById('zaiavka');setTimeout(function(){f.scrollIntoView({behavior:K.motion?'smooth':'auto'});var i=f.querySelector('input[name=name]');if(i)i.focus({preventScroll:true})},K.motion?320:0)}
+   mClose(false,function(){var f=document.getElementById('zaiavka');setTimeout(function(){f.scrollIntoView({behavior:K.motion?'smooth':'auto'});var i=f.querySelector('input[name=name]');if(i)i.focus({preventScroll:true})},K.motion?320:0)})}
  });
  document.addEventListener('keydown',function(e){
   if(md.hidden)return;
-  if(e.key==='Escape'){e.preventDefault();mHide();return}
+  if(e.key==='Escape'){e.preventDefault();mClose();return}
   if(e.key==='Tab'){var f=focusables(),a=f[0],z=f[f.length-1];
    if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}}
  });
